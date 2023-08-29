@@ -31,10 +31,12 @@ app.get('/', async (req, res, next) => {
 
 app.post('/', async (req, res, next) => {
 	const { msg } = req.body;
+	console.log(msg);
 	const date = new Date().toDateString();
 	const alert = new Alert({ msg, date });
 	await alert.save();
 	const alerts = await Alert.find({});
+	console.log('saved');
 	return res.status(201).json({ alerts });
 });
 
