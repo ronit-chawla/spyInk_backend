@@ -5,9 +5,7 @@ const Alert = require('./models/Alert');
 
 const app = express();
 
-const mongoURL =
-	process.env.MONGOURL ||
-	'mongodb+srv://ronit_c:abcddcba@tourcamp.alpnh.mongodb.net/?retryWrites=true&w=majority';
+const mongoURL = process.env.MONGOURL;
 const serverPort = process.env.PORT || 3000;
 
 app.use(express.json());
